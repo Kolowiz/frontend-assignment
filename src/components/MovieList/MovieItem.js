@@ -8,8 +8,9 @@ const MovieItem = ({ data, onClickItem }) => {
         <div
           className={styles.cardImageContainer}
           style={{
-            background: `url(https://image.tmdb.org/t/p/w400/${data.poster_path})`,
+            background: `url(${process.env.REACT_APP_API_BASE_IMAGE_URL}/${data.poster_path})`,
             backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
           <div className={styles.rating}>{data.vote_average}</div>

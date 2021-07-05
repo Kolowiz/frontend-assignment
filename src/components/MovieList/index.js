@@ -12,7 +12,7 @@ const MovieList = ({ searchQuery }) => {
     const fetchRecentMovies = async () => {
       setLoading(true);
       const response = await apiClient.get(
-        `/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}`
+        `/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}`
       );
       setData(response.data.results);
       setLoading(false);
@@ -20,7 +20,7 @@ const MovieList = ({ searchQuery }) => {
     const searchMovie = async () => {
       setLoading(true);
       const response = await apiClient.get(
-        `/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchQuery}`
+        `/search/movie?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}&query=${searchQuery}`
       );
       setData(response.data.results);
       setLoading(false);
