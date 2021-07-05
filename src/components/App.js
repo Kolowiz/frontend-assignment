@@ -1,7 +1,17 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 
-const App = () => (
-	<img src={logo} alt="Timescale" />
-)
+import Header from "./Header";
+import MovieList from "./MovieList";
+
+const App = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  return (
+    <div className="container">
+      <Header onSearch={setSearchQuery} />
+      <MovieList searchQuery={searchQuery} />
+    </div>
+  );
+};
 
 export default App;
